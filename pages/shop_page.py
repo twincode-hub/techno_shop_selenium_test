@@ -57,7 +57,7 @@ class Shop_page(Base):
     def get_set_filter_button(self):
         return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.ID, self.set_filter_button_id)))
     def get_tv_choice_to_cart(self):
-        return WebDriverWait(self.driver, 60).until(EC.element_to_be_clickable((By.XPATH, self.tv_choice_to_cart)))
+        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.tv_choice_to_cart)))
     def get_show_all_color(self):
         return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.show_all_color)))
     def get_show_all_resolution(self):
@@ -113,6 +113,9 @@ class Shop_page(Base):
         print('click set_filter_button')
 
 
+        # print(self.get_tv_choice_to_cart().text)
+
+
     def add_tv_to_cart(self):
 
         ActionChains(self.driver).move_to_element(self.get_tv_choice_to_cart()).perform()
@@ -129,6 +132,6 @@ class Shop_page(Base):
         print('Переходим в каталог телевизоров')
         self.enter_tv_catalog()
         self.make_tv_filter()
-        self.get_screenshot()
+        # self.get_screenshot()
         self.add_tv_to_cart()
-        self.get_screenshot()
+        # self.get_screenshot()
