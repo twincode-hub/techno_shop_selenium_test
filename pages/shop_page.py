@@ -26,9 +26,8 @@ class Shop_page(Base):
     matrix_checkbox_id = 'arrFilter_1436_3732816986'
     diagonal_checkbox_id = 'arrFilter_3767_210536161'
     set_filter_button_id = 'set_filter'
-    # tv_choice_to_cart = '//a[@class="add2basket item145348"]'
     tv_choice_to_cart = '//a[@class="add2basket item145348"]'
-    # tv_choice_to_cart = '//a[@class="js-popup-basket-add add2basket item145348"]'
+    # tv_choice_to_cart = '//a[@href="/personal/cart/"]'
     show_all_color = '//*[@id="ys_filter_bitronic"]/form/div[2]/div[2]/a/span'
     show_all_resolution = '//*[@id="ys_filter_bitronic"]/form/div[4]/div[2]/a/span'
     show_all_matrix = '//*[@id="ys_filter_bitronic"]/form/div[5]/div[2]/a/span'
@@ -114,6 +113,9 @@ class Shop_page(Base):
         print('click set_filter_button')
 
 
+        # print(self.get_tv_choice_to_cart().text)
+
+
     def add_tv_to_cart(self):
 
         ActionChains(self.driver).move_to_element(self.get_tv_choice_to_cart()).perform()
@@ -130,6 +132,6 @@ class Shop_page(Base):
         print('Переходим в каталог телевизоров')
         self.enter_tv_catalog()
         self.make_tv_filter()
-        self.get_screenshot()
+        # self.get_screenshot()
         self.add_tv_to_cart()
-        self.get_screenshot()
+        # self.get_screenshot()
