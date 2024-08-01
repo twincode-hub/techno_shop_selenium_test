@@ -26,9 +26,8 @@ class Shop_page(Base):
     matrix_checkbox_id = 'arrFilter_1436_3732816986'
     diagonal_checkbox_id = 'arrFilter_3767_210536161'
     set_filter_button_id = 'set_filter'
-    # tv_choice_to_cart = '//a[@class="add2basket item145348"]'
     tv_choice_to_cart = '//a[@class="add2basket item145348"]'
-    # tv_choice_to_cart = '//a[@class="js-popup-basket-add add2basket item145348"]'
+    # tv_choice_to_cart = '//a[@href="/personal/cart/"]'
     show_all_color = '//*[@id="ys_filter_bitronic"]/form/div[2]/div[2]/a/span'
     show_all_resolution = '//*[@id="ys_filter_bitronic"]/form/div[4]/div[2]/a/span'
     show_all_matrix = '//*[@id="ys_filter_bitronic"]/form/div[5]/div[2]/a/span'
@@ -58,7 +57,7 @@ class Shop_page(Base):
     def get_set_filter_button(self):
         return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.ID, self.set_filter_button_id)))
     def get_tv_choice_to_cart(self):
-        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.tv_choice_to_cart)))
+        return WebDriverWait(self.driver, 60).until(EC.element_to_be_clickable((By.XPATH, self.tv_choice_to_cart)))
     def get_show_all_color(self):
         return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.show_all_color)))
     def get_show_all_resolution(self):

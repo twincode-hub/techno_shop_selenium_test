@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 
+from pages.basket_page import Basket_page
 from pages.login_page import Login_page
 from pages.main_page import Main_page
 from base.base_class import Base
@@ -28,4 +29,8 @@ def test_buy_product():
 
     shop = Shop_page(driver)
     shop.select_product()
+
+    basket = Basket_page(driver)
+    basket.basket_buy_product()
+
 
