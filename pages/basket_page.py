@@ -17,13 +17,14 @@ class Basket_page(Base):
     basket_order_button = '//input[@id="basketOrderButton2"]'
     basket_product_name = '//*[@id="wrap"]/div[5]/div[1]/form/div[1]/div[1]/div[2]/table/tbody/tr/td/a/b'
     basket_total_price = '//div[@class="basket-total-price"]'
-    basket_delivery_town_radio = '//input[@id="reRND"]'
+    basket_delivery_town_radio = '//input[@id="reKRS"]'
     basket_delivery_price = '//span[@class="bx-soa-cart-d"]'
     basket_cardpay_checkbox = '//input[@id="ID_PAY_SYSTEM_ID_16"]'
     basket_email_input = '//input[@id="soa-property-4"]'
     basket_fio_input = '//input[@id="soa-property-5"]'
     basket_phone_input = '//input[@id="soa-property-6"]'
     basket_order_description_text = '//textarea[@id="orderDescription"]'
+    basket_order_go_button = '//a[@id="order_butt_main"]'
 
 
     #Getters
@@ -41,6 +42,21 @@ class Basket_page(Base):
 
     def get_basket_delivery_price(self):
         return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.basket_delivery_price)))
+
+    def get_basket_cardpay_checkbox(self):
+        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.basket_cardpay_checkbox)))
+
+    def get_basket_email_input(self):
+        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.basket_email_input)))
+
+    def get_basket_fio_input(self):
+        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.basket_fio_input)))
+
+    def get_basket_order_description_text(self):
+        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.basket_order_description_text)))
+
+    def get_basket_order_go_button(self):
+        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.XPATH, self.basket_order_go_button)))
 
 
 
